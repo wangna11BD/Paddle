@@ -28,8 +28,13 @@ class TestDygraphSpectralNorm(unittest.TestCase):
         self.set_data()
 
     def init_test_case(self):
+<<<<<<< HEAD
         self.batch_size = 2
         self.data_desc = (['x', [2, 9, 9]], )
+=======
+        self.batch_size = 3
+        self.data_desc = (['x', [2, 12, 12]], )
+>>>>>>> bc379ca3d5895eadbc1748bc5b71606011563ee1
         self.n_power_iterations = 1
         self.eps = 1e-12
         self.dim = None
@@ -101,7 +106,11 @@ class TestDygraphSpectralNorm(unittest.TestCase):
 
 class TestDygraphWeightNormCase(TestDygraphSpectralNorm):
     def init_test_case(self):
+<<<<<<< HEAD
         self.batch_size = 2
+=======
+        self.batch_size = 3
+>>>>>>> bc379ca3d5895eadbc1748bc5b71606011563ee1
         self.data_desc = (['x', [2, 3, 3]], )
         self.n_power_iterations = 1
         self.eps = 1e-12
@@ -110,7 +119,11 @@ class TestDygraphWeightNormCase(TestDygraphSpectralNorm):
 
 class TestDygraphWeightNormWithIterations(TestDygraphSpectralNorm):
     def init_test_case(self):
+<<<<<<< HEAD
         self.batch_size = 2
+=======
+        self.batch_size = 3
+>>>>>>> bc379ca3d5895eadbc1748bc5b71606011563ee1
         self.data_desc = (['x', [2, 3, 3]], )
         self.n_power_iterations = 2
         self.eps = 1e-12
@@ -119,12 +132,28 @@ class TestDygraphWeightNormWithIterations(TestDygraphSpectralNorm):
 
 class TestDygraphWeightNormWithDim(TestDygraphSpectralNorm):
     def init_test_case(self):
+<<<<<<< HEAD
         self.batch_size = 2
+=======
+        self.batch_size = 3
+>>>>>>> bc379ca3d5895eadbc1748bc5b71606011563ee1
         self.data_desc = (['x', [2, 3, 3]], )
         self.n_power_iterations = 1
         self.eps = 1e-12
         self.dim = 1
 
 
+<<<<<<< HEAD
+=======
+class TestDygraphWeightNormWithEps(TestDygraphSpectralNorm):
+    def init_test_case(self):
+        self.batch_size = 3
+        self.data_desc = (['x', [2, 3, 3]], )
+        self.n_power_iterations = 1
+        self.eps = 1e-10
+        self.dim = None
+
+
+>>>>>>> bc379ca3d5895eadbc1748bc5b71606011563ee1
 if __name__ == '__main__':
     unittest.main()

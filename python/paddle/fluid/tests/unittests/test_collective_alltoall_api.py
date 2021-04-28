@@ -1,4 +1,4 @@
-#   Copyright (c) 2019 PaddlePaddle Authors. All Rights Reserve.
+#   Copyright (c) 2020 PaddlePaddle Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,14 +13,22 @@
 # limitations under the License.
 
 from __future__ import print_function
+import unittest
+import numpy as np
+import paddle
 
-from . import decorator
-from .decorator import *
-from . import fp16_lists
-from .fp16_lists import *
-from . import fp16_utils
-from .fp16_utils import *
+from test_collective_api_base import TestDistBase
 
-__all__ = decorator.__all__
-__all__ += fp16_lists.__all__
-__all__ += fp16_utils.__all__
+paddle.enable_static()
+
+
+class TestCollectiveAllToAllAPI(TestDistBase):
+    def _setup_config(self):
+        pass
+
+    def test_alltoall_nccl(self):
+        self.check_with_place("collective_alltoall_api.py", "alltoall", "nccl")
+
+
+if __name__ == '__main__':
+    unittest.main()
